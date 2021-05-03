@@ -35,7 +35,7 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags: 
+          tags: |
             rodrigoveiga/api-bootcamp-produto:latest
             rodrigoveiga/api-bootcamp-produto:${{github.run_number}}
       
