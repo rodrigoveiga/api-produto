@@ -23,5 +23,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.4.0
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags:
+            rodrigoveiga/api-bootcamp-produto:latest
+            rodrigoveiga/api-bootcamp-produto:$({github.run_number})
       
       
